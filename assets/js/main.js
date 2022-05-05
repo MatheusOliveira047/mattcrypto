@@ -16,23 +16,22 @@ fetch('https://coinranking1.p.rapidapi.com/coins?referenceCurrencyUuid=yhjMzLPhu
      const obj = response.data.coins
 
      obj.forEach(element => {
-      let priceNumber = Number(element.price)
-	  let changeNumber = Number(element.change)
+	  const {iconUrl,name,symbol,price,change} = element
 	  
-	  	if(changeNumber < 0){
-		   	color = `<h3 class="red">${changeNumber}%</h3>`
-		}else{
-			color = `<h3 class="green">${changeNumber}%</h3>`
-		}
+	  let priceNumber = Number(price)
+	  let changeNumber = Number(change)
+	  let color = changeNumber < 0 ? `<h3 class="red">${changeNumber}%</h3>` :`<h3 class="green">${changeNumber}%</h3>`
+	  
+	  
 	
 	
 	card.innerHTML += `
 		<section class="boxes_crip">
 		<div class="name_crip">
-		<img src="${element.iconUrl}">
+		<img src="${iconUrl}">
 		<div>
-		<h3>${element.name}</h3>
-		<h4>${element.symbol}</h4>
+		<h3>${name}</h3>
+		<h4>${symbol}</h4>
 		
 		</div>
 		</div>
@@ -46,7 +45,7 @@ fetch('https://coinranking1.p.rapidapi.com/coins?referenceCurrencyUuid=yhjMzLPhu
         `
 		
 
-         console.log(changeNumber)
+         console.log(element)
          
      });
  }   

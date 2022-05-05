@@ -30,11 +30,11 @@ body{
 .sec_boxes{
     margin: 60px 0;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     width: 100%;
 }
 .sec_boxes .sec_box{
-    width: 33%;
+    width: 25%;
 }
 
 
@@ -56,12 +56,16 @@ main .boxes_crip .name_crip{
 main .boxes_crip .name_crip div{
     margin: 0 10px;
 }
+main .boxes_crip .name_crip div h4{
+    color: rgb(99, 97, 97);
+    font-size: 14px;
+}
 main .boxes_crip .price h3{
     text-align: left;
 }
 
 main .boxes_crip .price, main .boxes_crip .change,main .boxes_crip .name_crip{
-    width: 33%;
+    width: 25%;
 }
 
 
@@ -72,4 +76,35 @@ main .boxes_crip .change .red{
 
 main .boxes_crip .change .green{
     color: green !important;
+}
+
+@media (max-width:400px){
+    .header h1{
+        font-size: 26px;
+    }
+    .header h2{
+        font-size: 20px;
+    }
+    .sec_boxes .sec_box h3{
+        font-size: 14px;
+    }
+
+    main .boxes_crip .name_crip div h3{
+        font-size: 15px;
+    }
+    main .boxes_crip .name_crip div h4{
+        font-size: 12px;
+    }
+
+    main .boxes_crip .price h3{
+        font-size: 15px;
+    }
+    main .boxes_crip .change .red, main .boxes_crip .change .green{
+        font-size: 15px;
+    
+    }
+    
+   
+    
+    
 }
